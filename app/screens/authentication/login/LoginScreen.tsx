@@ -2,6 +2,7 @@ import { ScrollView, Text, View } from "react-native";
 import React from "react";
 import { TextInput, Button } from "react-native-paper";
 import { styles } from "./styles";
+import AlreadyHaveAnAccount from "../../../components/already_have_an_account/AlreadyHaveAnAccount";
 
 const LoginScreen = () => {
   return (
@@ -44,6 +45,12 @@ const LoginScreen = () => {
         >
           LOGIN
         </Button>
+
+        <AlreadyHaveAnAccount
+          text="New to the News?"
+          buttonText="Sign up"
+          onPressButton={() => {}}
+        />
       </View>
     </ScrollView>
   );
