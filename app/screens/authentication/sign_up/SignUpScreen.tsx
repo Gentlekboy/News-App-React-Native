@@ -3,8 +3,9 @@ import React from "react";
 import { TextInput, Button } from "react-native-paper";
 import { styles } from "./styles";
 import AlreadyHaveAnAccount from "../../../components/already_have_an_account/AlreadyHaveAnAccount";
+import { SignUpScreenNavigationProps } from "../../../types/navigation/ScreenNavigationProps";
 
-const SignUpScreen = () => {
+const SignUpScreen = ({ navigation }: SignUpScreenNavigationProps) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View>
@@ -64,7 +65,7 @@ const SignUpScreen = () => {
         <AlreadyHaveAnAccount
           text="Joined us before?"
           buttonText="Login"
-          onPressButton={() => {}}
+          onPressButton={() => navigation.navigate("Login")}
         />
       </View>
     </ScrollView>
