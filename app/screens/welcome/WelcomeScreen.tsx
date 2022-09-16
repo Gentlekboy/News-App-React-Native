@@ -3,8 +3,9 @@ import React from "react";
 import { Button } from "react-native-paper";
 import { StatusBar } from "expo-status-bar";
 import { styles } from "./styles";
+import { WelcomeScreenNavigationProps } from "../../types/navigation/ScreenNavigationProps";
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation }: WelcomeScreenNavigationProps) => {
   const logo = require("../../assets/images/adaptive-icon.png");
   return (
     <View style={styles.container}>
@@ -13,7 +14,7 @@ const WelcomeScreen = () => {
 
       <Button
         mode="contained"
-        onPress={() => console.log("Pressed Sign Up")}
+        onPress={() => navigation.navigate("SignUp")}
         style={[styles.button, styles.signUp]}
       >
         Sign Up to News
@@ -21,7 +22,7 @@ const WelcomeScreen = () => {
 
       <Button
         mode="contained"
-        onPress={() => console.log("Pressed Login")}
+        onPress={() => navigation.navigate("Login")}
         style={styles.button}
       >
         Login to News

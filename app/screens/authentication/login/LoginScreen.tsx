@@ -1,10 +1,11 @@
-import { ScrollView, Text, View } from "react-native";
+import { Alert, ScrollView, Text, View } from "react-native";
 import React from "react";
 import { TextInput, Button } from "react-native-paper";
 import { styles } from "./styles";
 import AlreadyHaveAnAccount from "../../../components/already_have_an_account/AlreadyHaveAnAccount";
+import { LoginScreenNavigationProps } from "../../../types/navigation/ScreenNavigationProps";
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }: LoginScreenNavigationProps) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View>
@@ -32,7 +33,7 @@ const LoginScreen = () => {
           uppercase={false}
           mode="text"
           color="#2596be"
-          onPress={() => console.log("Pressed")}
+          onPress={() => Alert.alert("Forgot Password", "Coming soon")}
           style={styles.forgotPassword}
         >
           Forgot Password?
@@ -49,7 +50,7 @@ const LoginScreen = () => {
         <AlreadyHaveAnAccount
           text="New to the News?"
           buttonText="Sign up"
-          onPressButton={() => {}}
+          onPressButton={() => navigation.navigate("SignUp")}
         />
       </View>
     </ScrollView>
