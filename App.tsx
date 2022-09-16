@@ -1,7 +1,11 @@
-import LoginScreen from "./app/screens/authentication/login/LoginScreen";
-import SignUpScreen from "./app/screens/authentication/sign_up/SignUpScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import StackNavigator from "./app/navigation/StackNavigator";
 import WelcomeScreen from "./app/screens/welcome/WelcomeScreen";
 
 export default function App() {
-  return <LoginScreen />;
+  return (
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
+  );
 }
